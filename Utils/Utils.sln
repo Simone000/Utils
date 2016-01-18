@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsMvc", "UtilsMvc\UtilsM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsCryptography", "UtilsCryptography\UtilsCryptography.csproj", "{58FDBA8C-11EE-4F17-B665-CB9E68747E74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsEmail", "UtilsEmail\UtilsEmail.csproj", "{ECD9B357-6BC3-4177-A935-B5974B8D5B08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{58FDBA8C-11EE-4F17-B665-CB9E68747E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58FDBA8C-11EE-4F17-B665-CB9E68747E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58FDBA8C-11EE-4F17-B665-CB9E68747E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
