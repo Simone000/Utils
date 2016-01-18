@@ -38,12 +38,28 @@ namespace UtilsAzureStorage
             FileStream.Seek(0, SeekOrigin.Begin);
         }
 
+        /// <summary>
+        /// Remember to dispose the stream!
+        /// </summary>
+        /// <param name="BlobName"></param>
+        /// <param name="ContainerName"></param>
+        /// <param name="StorageConnectionString"></param>
+        /// <returns></returns>
         public static async Task<Stream> DownloadBlobAsStream(string BlobName,
                                                               string ContainerName,
                                                               string StorageConnectionString)
         {
             var stream = new MemoryStream();
-            await DownloadBlobToStreamAsync(stream, BlobName, ContainerName, StorageConnectionString).ConfigureAwait(false);
+
+            try
+            {
+                await DownloadBlobToStreamAsync(stream, BlobName, ContainerName, StorageConnectionString).ConfigureAwait(false);
+            }
+            catch(Exception Exc)
+            {
+                stream.Dispose();
+                throw Exc;
+            }
             return stream;
         }
 

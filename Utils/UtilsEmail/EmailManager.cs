@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace UtilsEmail
 {
-    //todo: gestire allegati
-
     public class EmailManager
     {
         public static async Task InviaEmailAsync(SmtpClient smtpClient,
@@ -17,12 +15,12 @@ namespace UtilsEmail
                                      string Subject, string Body,
                                      bool IsBodyEncoded = false,
                                      bool IsBodyHtml = false,
-                                     MailPriority Priority = MailPriority.Normal)
+                                     MailPriority Priority = MailPriority.Normal,
+                                     List<Attachment> Attachments = null)
         {
             using (MailMessage mailMsg = new MailMessage())
             {
                 mailMsg.From = MailFrom_Address;
-
                 foreach (var to in MailTo_Address)
                 {
                     mailMsg.To.Add(to);
@@ -36,6 +34,11 @@ namespace UtilsEmail
                 mailMsg.Body = body;
                 mailMsg.IsBodyHtml = IsBodyHtml;
                 mailMsg.Priority = Priority;
+
+                //allegati
+                if (Attachments != null && Attachments.Count > 0)
+                    foreach (var attach in Attachments)
+                        mailMsg.Attachments.Add(attach);
 
                 await smtpClient.SendMailAsync(mailMsg).ConfigureAwait(false);
             }
