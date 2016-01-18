@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsCryptography", "UtilsC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsEmail", "UtilsEmail\UtilsEmail.csproj", "{ECD9B357-6BC3-4177-A935-B5974B8D5B08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsAzureStorage", "UtilsAzureStorage\UtilsAzureStorage.csproj", "{078B823A-BBBF-4292-B34C-1DD0D6D74F39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD9B357-6BC3-4177-A935-B5974B8D5B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078B823A-BBBF-4292-B34C-1DD0D6D74F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078B823A-BBBF-4292-B34C-1DD0D6D74F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078B823A-BBBF-4292-B34C-1DD0D6D74F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078B823A-BBBF-4292-B34C-1DD0D6D74F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
