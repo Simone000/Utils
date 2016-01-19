@@ -10,6 +10,19 @@ namespace UtilsEmail
 {
     public class EmailManager
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="smtpClient"></param>
+        /// <param name="MailFrom_Address"></param>
+        /// <param name="MailTo_Address"></param>
+        /// <param name="Subject"></param>
+        /// <param name="Body"></param>
+        /// <param name="IsBodyEncoded"></param>
+        /// <param name="IsBodyHtml"></param>
+        /// <param name="Priority"></param>
+        /// <param name="Attachments">DisposableList<Attachment></param>
+        /// <returns></returns>
         public static async Task InviaEmailAsync(SmtpClient smtpClient,
                                      MailAddress MailFrom_Address, List<MailAddress> MailTo_Address,
                                      string Subject, string Body,

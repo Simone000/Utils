@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDOManager.cs" />
     <Compile Include="EmailManager.cs" />
     <Compile Include="MailAttachmentModel.cs" />
     <Compile Include="PECManager.cs" />
