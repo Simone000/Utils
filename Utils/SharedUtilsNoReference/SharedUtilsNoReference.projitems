@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4e71dd2f-083f-4304-a80f-1aeb1e89e9f3</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedUtilsNoReference</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Bootstrap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CSV.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomCollections.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DATES.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EXCEL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FILES.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LOG_FILE.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NETWORK.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TASKS.cs" />
+  </ItemGroup>
+</Project>
