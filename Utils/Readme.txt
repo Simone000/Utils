@@ -1,0 +1,1 @@
+Shared projects per different targets con different required packages?
