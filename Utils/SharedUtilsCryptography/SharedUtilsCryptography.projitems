@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>91a4242e-234d-4dc9-98ec-2ceeccc91c71</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedUtilsCryptography</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Certificati.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CRYPTOGRAPHY.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Rijndael.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TEMP.cs" />
+  </ItemGroup>
+</Project>

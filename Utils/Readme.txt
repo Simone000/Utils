@@ -1,1 +1,1 @@
-Shared projects per different targets con different required packages?
+Shared projects for different .NET targets with different required packages
