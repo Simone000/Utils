@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net46", "Net46", "{436E3FEC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsNoReference_46", "UtilsNoReference_46\UtilsNoReference_46.csproj", "{DD9090AB-9AF1-4C6E-8A91-385FB6F1191C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedImplementations", "SharedImplementations", "{4E04E09C-221C-47B8-96C2-64AA81CAD4A8}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{be02d962-c236-411c-ab6d-feed089da1f9}*SharedItemsImports = 4
@@ -78,6 +80,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4E71DD2F-083F-4304-A80F-1AEB1E89E9F3} = {4E04E09C-221C-47B8-96C2-64AA81CAD4A8}
 		{BE02D962-C236-411C-AB6D-FEED089DA1F9} = {50686D1E-F42D-491B-BF5D-00362DA2FC02}
 		{DD9090AB-9AF1-4C6E-8A91-385FB6F1191C} = {436E3FEC-A22E-4599-AE3D-8625675E8556}
 	EndGlobalSection
