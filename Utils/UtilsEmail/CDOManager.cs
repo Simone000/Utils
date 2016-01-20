@@ -34,7 +34,7 @@ namespace UtilsEmail
         {
             var mail = new MailMessage();
             mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", SmtpHost);
-            mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", SmtpPort);
+            mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", SmtpPort); //todo: provare a vedere se c'è smtphost e port con porta 25
             mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", "2");
             mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", "1");
             mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", Username);
@@ -74,7 +74,11 @@ namespace UtilsEmail
                 }
             }
 
+
+            //todo H3G: System.Web.Mail.SmtpMail.SmtpServer = ConfigurationManager.AppSettings["PECSMTPHost"] + ":" + ConfigurationManager.AppSettings["PECSMTPPort"];
             SmtpMail.SmtpServer.Insert(0, SmtpHost);
+
+
             SmtpMail.Send(mail);
 
             //elimino allegati creati
