@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mail; //I'm NOT using System.NET (The .NET System.Net.Mail.SmtpClient class cannot handle implicit SSL connection)
-using UtilsNoReference;
 
 namespace SharedUtilsEmail
 {
@@ -96,6 +95,24 @@ namespace SharedUtilsEmail
                     Trace.TraceError("CDOManager, SendEmail, Delete attachments files Exc: " + Exc.ToString());
                 }
             }
+        }
+    }
+
+    public static class StringExtensions
+    {
+        /// <summary>
+        /// FileName_dd-MM-yyyy-ss-fff.estensione
+        /// </summary>
+        /// <param name="FileName"></param>
+        /// <returns></returns>
+        public static string MakeUnique(this string FileName)
+        {
+            var estensione = Path.GetExtension(FileName);
+            var senzaEstensione = Path.GetFileNameWithoutExtension(FileName);
+            var stringaUnivoca = DateTime.Now.ToString("dd-MM-yyyy-ss-fff");
+
+            var nuovoFile = senzaEstensione.Trim() + "_" + stringaUnivoca + estensione;
+            return nuovoFile;
         }
     }
 }
