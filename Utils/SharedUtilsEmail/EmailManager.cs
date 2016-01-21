@@ -24,7 +24,7 @@ namespace SharedUtilsEmail
         /// <param name="Attachments">DisposableList<Attachment></param>
         /// <returns></returns>
         public static async Task InviaEmailAsync(SmtpClient smtpClient,
-                                     MailAddress MailFrom_Address, List<MailAddress> MailTo_Address,
+                                     MailAddress MailFrom_Address, string MailsTo,
                                      string Subject, string Body,
                                      bool IsBodyEncoded = false,
                                      bool IsBodyHtml = false,
@@ -34,13 +34,9 @@ namespace SharedUtilsEmail
             using (MailMessage mailMsg = new MailMessage())
             {
                 mailMsg.From = MailFrom_Address;
-                foreach (var to in MailTo_Address)
-                {
-                    mailMsg.To.Add(to);
-                }
+                mailMsg.To.Add(MailsTo);
 
                 mailMsg.Subject = Subject;
-
                 string body = Body;
                 if (IsBodyEncoded)
                     body = System.Net.WebUtility.HtmlDecode(body);
