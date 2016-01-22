@@ -27,6 +27,7 @@ namespace SharedUtilsNoReference
         }
 
         // string page = await RetryOnFaultAsync( ()=>DownloadStringAsync(url), 3);
+        //todo: aggiungere delay in caso di ecc
         public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries)
         {
             for (int i = 0; i < MaxTries; i++)
