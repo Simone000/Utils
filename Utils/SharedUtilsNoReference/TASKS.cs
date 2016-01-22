@@ -26,8 +26,16 @@ namespace SharedUtilsNoReference
             return default(T);
         }
 
-        
-        public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries, TimeSpan WaitAfterExc)
+
+        /// <summary>
+        /// string page = await RetryOnFaultAsync( ()=>DownloadStringAsync(url), 3, TimeSpan.FromSeconds(30));
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="function"></param>
+        /// <param name="MaxTries"></param>
+        /// <param name="WaitAfterExc">TimeSpan.FromSeconds(30)</param>
+        /// <returns></returns>
+        public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries, TimeSpan? WaitAfterExc = null)
         {
             for (int i = 0; i < MaxTries; i++)
             {
@@ -40,8 +48,8 @@ namespace SharedUtilsNoReference
                     if (i == MaxTries - 1)
                         throw;
 
-                    if (WaitAfterExc != TimeSpan.Zero)
-                        await Task.Delay(WaitAfterExc).ConfigureAwait(false);
+                    if (WaitAfterExc.HasValue && WaitAfterExc.Value != TimeSpan.Zero)
+                        await Task.Delay(WaitAfterExc.Value).ConfigureAwait(false);
                 }
             }
             return default(T);
