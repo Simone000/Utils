@@ -26,8 +26,27 @@ namespace SharedUtilsNoReference
             return default(T);
         }
 
+        
+        public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries, TimeSpan WaitAfterExc)
+        {
+            for (int i = 0; i < MaxTries; i++)
+            {
+                try
+                {
+                    return await function().ConfigureAwait(false);
+                }
+                catch
+                {
+                    if (i == MaxTries - 1)
+                        throw;
+
+                    if (WaitAfterExc != TimeSpan.Zero)
+                        await Task.Delay(WaitAfterExc).ConfigureAwait(false);
+                }
+            }
+            return default(T);
+        }
         // string page = await RetryOnFaultAsync( ()=>DownloadStringAsync(url), 3);
-        //todo: aggiungere delay in caso di ecc
         public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries)
         {
             for (int i = 0; i < MaxTries; i++)
