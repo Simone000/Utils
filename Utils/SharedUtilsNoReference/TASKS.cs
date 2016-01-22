@@ -55,22 +55,22 @@ namespace SharedUtilsNoReference
             return default(T);
         }
         // string page = await RetryOnFaultAsync( ()=>DownloadStringAsync(url), 3);
-        public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries)
-        {
-            for (int i = 0; i < MaxTries; i++)
-            {
-                try
-                {
-                    return await function().ConfigureAwait(false);
-                }
-                catch
-                {
-                    if (i == MaxTries - 1)
-                        throw;
-                }
-            }
-            return default(T);
-        }
+        //public static async Task<T> RetryOnFaultAsync<T>(Func<Task<T>> function, int MaxTries)
+        //{
+        //    for (int i = 0; i < MaxTries; i++)
+        //    {
+        //        try
+        //        {
+        //            return await function().ConfigureAwait(false);
+        //        }
+        //        catch
+        //        {
+        //            if (i == MaxTries - 1)
+        //                throw;
+        //        }
+        //    }
+        //    return default(T);
+        //}
 
         /*
            Lancia tutti i metodi, ritorna il primo metodo e annulla tutti gli altri.
