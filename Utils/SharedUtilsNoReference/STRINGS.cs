@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace SharedUtilsNoReference
 {
-    public static class StringExtensions
+    public static class STRINGS
     {
-        public static string TrimNulls(this string Stringa)
+        public static string TrimNull(this string Stringa)
         {
             if (Stringa == null)
                 return string.Empty;
             return Stringa.Trim();
         }
 
-        public static string TrimNulls(this JToken DataValue)
+        public static string TrimNull(this JToken DataValue)
         {
             if (DataValue != null)
                 return DataValue.ToObject<string>().Trim();
