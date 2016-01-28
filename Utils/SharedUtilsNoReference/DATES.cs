@@ -35,16 +35,28 @@ namespace SharedUtilsNoReference
         }
 
 
+        public static double ToJSData(this DateTime Data)
+        {
+            return Data.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Local))
+               .TotalMilliseconds;
+        }
+
+        public static double? ToJSData(this DateTime? Data)
+        {
+            if (Data == null)
+                return null;
+            return Data.Value.ToJSData();
+        }
 
         /// <summary>
         /// da usare quando la data che mi arriva dal db non è utc
         /// </summary>
         /// <param name="Data"></param>
-        /// <param name="SourceTimeZoneID"></param>
-        /// <param name="DestinationTimeZoneID"></param>
+        /// <param name="SourceTimeZoneID">W.Europe Standard Time</param>
+        /// <param name="DestinationTimeZoneID">UTC</param>
         /// <returns></returns>
         public static double ToJSData(this DateTime Data,
-                                      string SourceTimeZoneID = "W.Europe Standard Time", string DestinationTimeZoneID = "UTC")
+                                      string SourceTimeZoneID, string DestinationTimeZoneID = "UTC")
         {
             var DateUtc = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Data, SourceTimeZoneID, DestinationTimeZoneID);
 
@@ -52,8 +64,16 @@ namespace SharedUtilsNoReference
                .TotalMilliseconds;
 
         }
+
+        /// <summary>
+        /// da usare quando la data che mi arriva dal db non è utc
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <param name="SourceTimeZoneID">W.Europe Standard Time</param>
+        /// <param name="DestinationTimeZoneID">UTC</param>
+        /// <returns></returns>
         public static double? ToJSData(this DateTime? Data,
-                                       string SourceTimeZoneID = "W.Europe Standard Time", string DestinationTimeZoneID = "UTC")
+                                       string SourceTimeZoneID, string DestinationTimeZoneID = "UTC")
         {
             if (Data == null)
                 return null;
