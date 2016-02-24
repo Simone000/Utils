@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)CSV.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomCollections.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DATES.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ENUMS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EXCEL.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FILES.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LOG_FILE.cs" />
