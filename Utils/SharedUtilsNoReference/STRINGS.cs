@@ -33,7 +33,7 @@ namespace SharedUtilsNoReference
 
 
         /// <summary>
-        /// FileName_dd-MM-yyyy-ss-fff.estensione
+        /// FileName_yyyy-MM-dd-ss-fff.estensione
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace SharedUtilsNoReference
         {
             var estensione = Path.GetExtension(FileName);
             var senzaEstensione = Path.GetFileNameWithoutExtension(FileName);
-            var stringaUnivoca = DateTime.Now.ToString("dd-MM-yyyy-ss-fff");
+            var stringaUnivoca = DateTime.Now.ToString("yyyy-MM-dd-ss-fff");
 
             var nuovoFile = senzaEstensione.Trim() + "_" + stringaUnivoca + estensione;
             return nuovoFile;
