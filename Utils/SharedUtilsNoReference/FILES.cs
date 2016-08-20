@@ -10,6 +10,22 @@ namespace SharedUtilsNoReference
 {
     public static class FILES
     {
+        public static async Task<string> ReadAllTextAsync(string Path, Encoding Encoding)
+        {
+            using (StreamReader sr = new StreamReader(Path, Encoding))
+                return await sr.ReadToEndAsync().ConfigureAwait(false);
+        }
+
+        public static async Task<byte[]> ReadAllBytesAsync(string Path)
+        {
+            using (var file = new FileStream(Path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true))
+            {
+                byte[] buff = new byte[file.Length];
+                await file.ReadAsync(buff, 0, (int)file.Length).ConfigureAwait(false);
+                return buff;
+            }
+        }
+
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
         {
             // Get the subdirectories for the specified directory.
@@ -70,8 +86,7 @@ namespace SharedUtilsNoReference
             File.SetAttributes(file, FileAttributes.Normal);
             File.WriteAllText(file, text + currentContent);
         }
-
-
+        
         public static string MakeValidFileName(string filename_originale)
         {
             string caratteriInvalidi = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
@@ -79,6 +94,5 @@ namespace SharedUtilsNoReference
             string filename_nuovo = Regex.Replace(filename_originale, invalidReStr, "_").Replace(";", "").Replace(",", "");
             return filename_nuovo;
         }
-
     }
 }
