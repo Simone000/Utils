@@ -45,7 +45,7 @@ namespace SharedUtilsAzureStorage
         /// <param name="ContainerName"></param>
         /// <param name="StorageConnectionString"></param>
         /// <returns></returns>
-        public static async Task<Stream> DownloadBlobAsStream(string BlobName,
+        public static async Task<Stream> DownloadBlobAsStreamAsync(string BlobName,
                                                               string ContainerName,
                                                               string StorageConnectionString)
         {
