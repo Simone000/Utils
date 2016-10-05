@@ -67,7 +67,7 @@ namespace SharedUtilsAzureStorage
         /// 
         /// </summary>
         /// <param name="FileStream">await File.ReadAsStreamAsync()</param>
-        /// <param name="BlobName"></param>
+        /// <param name="BlobName">.MakeUnique()</param>
         /// <param name="ContainerName"></param>
         /// <param name="StorageConnectionString">DefaultEndpointsProtocol=https;AccountName=...;AccountKey=...</param>
         /// <returns></returns>
