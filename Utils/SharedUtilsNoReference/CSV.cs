@@ -17,6 +17,8 @@ namespace SharedUtilsNoReference
         }
 
 
+        //todo: use table instead of DataSet
+        //todo: create a templated list version
         public static string ToCSV_String(DataSet dataset)
         {
             StringBuilder sb = new StringBuilder();
