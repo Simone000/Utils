@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DATES.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ENUMS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EXCEL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\CustomValidationException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FILES.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LOG_FILE.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NETWORK.cs" />
