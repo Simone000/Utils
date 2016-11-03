@@ -21,5 +21,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)NETWORK.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)STRINGS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TASKS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XML.cs" />
   </ItemGroup>
 </Project>
