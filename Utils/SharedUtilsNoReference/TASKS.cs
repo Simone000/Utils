@@ -9,7 +9,7 @@ namespace SharedUtilsNoReference
 {
     public static class TASKS
     {
-        public static T RetryOnFault<T>(Func<T> function, int MaxTries)
+        public static T RetryOnFault<T>(Func<T> function, int MaxTries, TimeSpan? WaitAfterExc = null)
         {
             for (int i = 0; i < MaxTries; i++)
             {
@@ -21,6 +21,9 @@ namespace SharedUtilsNoReference
                 {
                     if (i == MaxTries - 1)
                         throw;
+
+                    if (WaitAfterExc.HasValue && WaitAfterExc.Value != TimeSpan.Zero)
+                        Task.Delay(WaitAfterExc.Value).Wait();
                 }
             }
             return default(T);
@@ -74,13 +77,14 @@ namespace SharedUtilsNoReference
             }
         }
 
-        /*
-           Lancia tutti i metodi, ritorna il primo metodo e annulla tutti gli altri.
-         * 
-         * double currentPrice = await GetFirstResult( ct => MetodoAsync("param", ct),
-         *                                             ct => Metodo2Async("param", ct),
-         *                                             ct => Metodo3Async("param", ct));
-        */
+        
+        /// <summary>
+        /// Lancia tutti i metodi, ritorna il primo metodo e annulla tutti gli altri.
+        /// double currentPrice = await GetFirstResult(ct => MetodoAsync("param", ct), ct => Metodo2Async("param", ct), ct => Metodo3Async("param", ct));
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="functions"></param>
+        /// <returns></returns>
         public static async Task<T> GetFirstResult<T>(params Func<CancellationToken, Task<T>>[] functions)
         {
             var cts = new CancellationTokenSource();
@@ -96,7 +100,7 @@ namespace SharedUtilsNoReference
                 var ignored = task.ContinueWith(t => Log(t), TaskContinuationOptions.OnlyOnFaulted);
             }*/
 
-            return completed.Result; //è sbagliato!
+            return completed.Result; //todo: è sbagliato!
         }
     }
 }
