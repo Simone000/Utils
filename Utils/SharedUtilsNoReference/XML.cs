@@ -21,6 +21,18 @@ namespace SharedUtilsNoReference
             return ris;
         }
 
+        public static string SerializeToXml<T>(T value, Type[] ExtraTypes)
+        {
+            string ris = string.Empty;
+            using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T), ExtraTypes);
+                serializer.Serialize(writer, value);
+                ris = writer.ToString();
+            }
+            return ris;
+        }
+
         public static T DeserializeFromXml<T>(string value)
         {
             T ris;
