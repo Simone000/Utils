@@ -78,6 +78,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsEmail_462", "UtilsEmai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsMvc_462", "UtilsMvc_462\UtilsMvc_462.csproj", "{D8EE0E2D-71EC-4A0D-888D-13CBDE115B2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsReflection", "UtilsReflection\UtilsReflection.csproj", "{64BD8CFB-0357-477F-8D23-CEC6D1234984}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{08751d4e-6a76-45ca-ad57-73715efb2c6e}*SharedItemsImports = 4
@@ -255,6 +257,12 @@ Global
 		{D8EE0E2D-71EC-4A0D-888D-13CBDE115B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8EE0E2D-71EC-4A0D-888D-13CBDE115B2F}.ReleaseNet46|Any CPU.ActiveCfg = Release|Any CPU
 		{D8EE0E2D-71EC-4A0D-888D-13CBDE115B2F}.ReleaseNet46|Any CPU.Build.0 = Release|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.ReleaseNet46|Any CPU.ActiveCfg = Release|Any CPU
+		{64BD8CFB-0357-477F-8D23-CEC6D1234984}.ReleaseNet46|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
