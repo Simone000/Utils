@@ -63,6 +63,43 @@ namespace SharedUtilsAzureStorage
             return stream;
         }
 
+
+        /// <summary>
+        /// parse the storageconnectionstring, createifnotexist the container (with permissions), return a BlockBlobReference
+        /// </summary>
+        /// <param name="BlobName"></param>
+        /// <param name="ContainerName"></param>
+        /// <param name="StorageConnectionString"></param>
+        /// <param name="IsContainerPublic"></param>
+        /// <returns></returns>
+        public static async Task<CloudBlockBlob> GetCloudBlockBlobAsync(string BlobName,
+                                                                         string ContainerName,
+                                                                         string StorageConnectionString,
+                                                                         bool IsContainerPublic = false)
+        {
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            CloudBlobContainer container = blobClient.GetContainerReference(ContainerName);
+
+            var created = await container.CreateIfNotExistsAsync().ConfigureAwait(false);
+            if (created)
+            {
+                if (IsContainerPublic)
+                {
+                    throw new NotImplementedException("Currently implemented for private containers only");
+                }
+
+                await container.SetPermissionsAsync(new BlobContainerPermissions
+                               {
+                                   PublicAccess = BlobContainerPublicAccessType.Off
+                               })
+                               .ConfigureAwait(false);
+            }
+
+            CloudBlockBlob blockBlob = container.GetBlockBlobReference(BlobName);
+            return blockBlob;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -77,28 +114,20 @@ namespace SharedUtilsAzureStorage
                                             string StorageConnectionString,
                                             bool IsContainerPublic = false)
         {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
-            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-            CloudBlobContainer container = blobClient.GetContainerReference(ContainerName);
-
-            var created = await container.CreateIfNotExistsAsync().ConfigureAwait(false);
-            if (created)
-            {
-                if(IsContainerPublic)
-                {
-                    throw new NotImplementedException("Implementato solo per container privato");
-                }
-
-                await container.SetPermissionsAsync(new BlobContainerPermissions
-                {
-                    PublicAccess = BlobContainerPublicAccessType.Off
-                }).ConfigureAwait(false);
-            }
-
-            CloudBlockBlob blockBlob = container.GetBlockBlobReference(BlobName);
+            var blockBlob = await GetCloudBlockBlobAsync(BlobName, ContainerName, StorageConnectionString, IsContainerPublic)
+                                  .ConfigureAwait(false);
             await blockBlob.UploadFromStreamAsync(FileStream).ConfigureAwait(false);
         }
 
-
+        public static async Task UploadBlobAsync(string Content,
+                                            string BlobName,
+                                            string ContainerName,
+                                            string StorageConnectionString,
+                                            bool IsContainerPublic = false)
+        {
+            var blockBlob = await GetCloudBlockBlobAsync(BlobName, ContainerName, StorageConnectionString, IsContainerPublic)
+                                  .ConfigureAwait(false);
+            await blockBlob.UploadTextAsync(Content).ConfigureAwait(false);
+        }
     }
 }
