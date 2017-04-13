@@ -105,7 +105,7 @@ namespace SharedUtilsAzureStorage
         /// <param name="ContainerName"></param>
         /// <param name="StorageConnectionString">DefaultEndpointsProtocol=https;AccountName=...;AccountKey=...</param>
         /// <returns></returns>
-        public static async Task UploadBlobAsync(Stream FileStream,
+        public static async Task<CloudBlockBlob> UploadBlobAsync(Stream FileStream,
                                             string BlobName,
                                             string ContainerName,
                                             string StorageConnectionString,
@@ -114,9 +114,11 @@ namespace SharedUtilsAzureStorage
             var blockBlob = await GetCloudBlockBlobAsync(BlobName, ContainerName, StorageConnectionString, IsContainerPublic)
                                   .ConfigureAwait(false);
             await blockBlob.UploadFromStreamAsync(FileStream).ConfigureAwait(false);
+
+            return blockBlob;
         }
 
-        public static async Task UploadBlobAsync(string Content,
+        public static async Task<CloudBlockBlob> UploadBlobAsync(string Content,
                                             string BlobName,
                                             string ContainerName,
                                             string StorageConnectionString,
@@ -125,6 +127,8 @@ namespace SharedUtilsAzureStorage
             var blockBlob = await GetCloudBlockBlobAsync(BlobName, ContainerName, StorageConnectionString, IsContainerPublic)
                                   .ConfigureAwait(false);
             await blockBlob.UploadTextAsync(Content).ConfigureAwait(false);
+
+            return blockBlob;
         }
     }
 }
