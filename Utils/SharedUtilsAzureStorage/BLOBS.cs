@@ -84,16 +84,13 @@ namespace SharedUtilsAzureStorage
             var created = await container.CreateIfNotExistsAsync().ConfigureAwait(false);
             if (created)
             {
-                if (IsContainerPublic)
-                {
-                    throw new NotImplementedException("Currently implemented for private containers only");
-                }
-
+                BlobContainerPublicAccessType publicAccess = IsContainerPublic ?
+                                                             BlobContainerPublicAccessType.Blob :
+                                                             BlobContainerPublicAccessType.Off;
                 await container.SetPermissionsAsync(new BlobContainerPermissions
-                               {
-                                   PublicAccess = BlobContainerPublicAccessType.Off
-                               })
-                               .ConfigureAwait(false);
+                {
+                    PublicAccess = publicAccess
+                }).ConfigureAwait(false);
             }
 
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(BlobName);
