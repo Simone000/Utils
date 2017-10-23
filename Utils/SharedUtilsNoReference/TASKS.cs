@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,12 +17,10 @@ namespace SharedUtilsNoReference
                 {
                     return function();
                 }
-                catch(Exception Exc)
+                catch(Exception)
                 {
                     if (i == MaxTries - 1)
                         throw;
-
-                    Trace.TraceWarning("RetryOnFault, Num Tentativo: {0}, ExcMessage: {1}", i, Exc.Message);
 
                     if (WaitAfterExc.HasValue && WaitAfterExc.Value != TimeSpan.Zero)
                         Task.Delay(WaitAfterExc.Value).Wait();
@@ -49,12 +46,10 @@ namespace SharedUtilsNoReference
                 {
                     return await function().ConfigureAwait(false);
                 }
-                catch (Exception Exc)
+                catch (Exception)
                 {
                     if (i == MaxTries - 1)
                         throw;
-
-                    Trace.TraceWarning("RetryOnFault, Num Tentativo: {0}, ExcMessage: {1}", i, Exc.Message);
 
                     if (WaitAfterExc.HasValue && WaitAfterExc.Value != TimeSpan.Zero)
                         await Task.Delay(WaitAfterExc.Value).ConfigureAwait(false);
@@ -71,12 +66,10 @@ namespace SharedUtilsNoReference
                 {
                     await function().ConfigureAwait(false);
                 }
-                catch (Exception Exc)
+                catch (Exception)
                 {
                     if (i == MaxTries - 1)
                         throw;
-
-                    Trace.TraceWarning("RetryOnFault, Num Tentativo: {0}, ExcMessage: {1}", i, Exc.Message);
 
                     if (WaitAfterExc.HasValue && WaitAfterExc.Value != TimeSpan.Zero)
                         await Task.Delay(WaitAfterExc.Value).ConfigureAwait(false);
