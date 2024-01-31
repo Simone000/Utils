@@ -58,13 +58,22 @@ namespace SharedUtilsNoReference
             return default(T);
         }
 
-        public static async Task RetryOnFault_VoidAsync<T>(Func<Task<T>> function, int MaxTries = 3, TimeSpan? WaitAfterExc = null)
+        /// <summary>
+        /// version without return value
+        /// await RetryOnFaultAsync(async ()=> await DownloadStringAsync(url), 3, TimeSpan.FromSeconds(30));
+        /// </summary>
+        /// <param name="function"></param>
+        /// <param name="MaxTries"></param>
+        /// <param name="WaitAfterExc">TimeSpan.FromSeconds(30)</param>
+        /// <returns></returns>
+        public static async Task RetryOnFaultAsync(Func<Task> function, int MaxTries = 3, TimeSpan? WaitAfterExc = null)
         {
             for (int i = 0; i < MaxTries; i++)
             {
                 try
                 {
                     await function().ConfigureAwait(false);
+                    return;
                 }
                 catch (Exception)
                 {
@@ -77,7 +86,6 @@ namespace SharedUtilsNoReference
             }
         }
 
-        
         /// <summary>
         /// Lancia tutti i metodi, ritorna il primo metodo e annulla tutti gli altri.
         /// double currentPrice = await GetFirstResult(ct => MetodoAsync("param", ct), ct => Metodo2Async("param", ct), ct => Metodo3Async("param", ct));

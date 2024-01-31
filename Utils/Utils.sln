@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsNoReference", "UtilsNoReference\UtilsNoReference.csproj", "{C493F86B-63D0-4BAD-B5C8-AFB443892F19}"
 EndProject
@@ -84,33 +84,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNoReference", "TestNoRe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9DC15AC7-4573-48A5-9D20-4C0FC1BED9F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "Elementi di soluzione", "{AD3D0EC2-BB08-4654-A3D5-FBBB003A1796}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{08751d4e-6a76-45ca-ad57-73715efb2c6e}*SharedItemsImports = 4
-		SharedUtilsEmail\SharedUtilsEmail.projitems*{154871f4-e22f-426e-9608-3b5cd7846ee7}*SharedItemsImports = 4
-		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{1b3b5f6d-5c8b-4bd3-8ad0-325c5d077696}*SharedItemsImports = 4
-		SharedUtilsMvc\SharedUtilsMvc.projitems*{27446def-1313-46b3-ac68-cfb445d01efa}*SharedItemsImports = 4
-		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{2e4587a1-fa94-4fc9-8c52-2fd4144a397a}*SharedItemsImports = 4
-		SharedUtilsEmail\SharedUtilsEmail.projitems*{30185db8-cea4-4b22-a232-cd223e0ce5d5}*SharedItemsImports = 13
-		SharedUtilsAPI\SharedUtilsAPI.projitems*{310c06f7-7510-4e88-8e19-bba31164a46a}*SharedItemsImports = 13
-		SharedUtilsAPI\SharedUtilsAPI.projitems*{3e3e8bc2-b1c3-49e1-a330-10834625e63f}*SharedItemsImports = 4
-		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{3ecde1c7-cab4-4025-8790-12b07b4fa69f}*SharedItemsImports = 13
-		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{4e71dd2f-083f-4304-a80f-1aeb1e89e9f3}*SharedItemsImports = 13
-		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{68480271-eb5b-4ba7-8d35-3cc1ccbf83c8}*SharedItemsImports = 4
-		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{77db01da-e64b-4772-a545-6f38afc95890}*SharedItemsImports = 4
-		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{91a4242e-234d-4dc9-98ec-2ceeccc91c71}*SharedItemsImports = 13
-		SharedUtilsMvc\SharedUtilsMvc.projitems*{9530aa05-eb3d-44c8-8401-bad8edbfd211}*SharedItemsImports = 13
-		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{9b6edf11-2488-4490-9b7f-b4094db1d56f}*SharedItemsImports = 4
-		SharedUtilsAPI\SharedUtilsAPI.projitems*{b7446f27-ed2a-422b-b5b6-9dd0ac22e3bf}*SharedItemsImports = 4
-		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{be02d962-c236-411c-ab6d-feed089da1f9}*SharedItemsImports = 4
-		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{c1c680bd-7fae-41e6-8ce9-516ec9f2c54c}*SharedItemsImports = 4
-		SharedUtilsMvc\SharedUtilsMvc.projitems*{cf370db1-09b7-4ab3-ab4d-7bc9ed405dd2}*SharedItemsImports = 4
-		SharedUtilsMvc\SharedUtilsMvc.projitems*{d8ee0e2d-71ec-4a0d-888d-13cbde115b2f}*SharedItemsImports = 4
-		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{dd9090ab-9af1-4c6e-8a91-385fb6f1191c}*SharedItemsImports = 4
-		SharedUtilsEmail\SharedUtilsEmail.projitems*{edc40a9a-a05a-40c2-aa06-8f73b9e6ddaa}*SharedItemsImports = 4
-		SharedUtilsAPI\SharedUtilsAPI.projitems*{f971c8eb-f01d-412b-bf31-4ddac5c27d5f}*SharedItemsImports = 4
-		SharedUtilsEmail\SharedUtilsEmail.projitems*{f9aebd9f-8c67-4555-b335-970ee79417eb}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -309,5 +288,31 @@ Global
 		{154871F4-E22F-426E-9608-3B5CD7846EE7} = {16414F69-F5D5-4623-80E7-246EAB73BBF8}
 		{D8EE0E2D-71EC-4A0D-888D-13CBDE115B2F} = {16414F69-F5D5-4623-80E7-246EAB73BBF8}
 		{0BCC4D79-1FD9-4286-8FD6-9E3F40D3AAE8} = {9DC15AC7-4573-48A5-9D20-4C0FC1BED9F3}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{08751d4e-6a76-45ca-ad57-73715efb2c6e}*SharedItemsImports = 4
+		SharedUtilsEmail\SharedUtilsEmail.projitems*{154871f4-e22f-426e-9608-3b5cd7846ee7}*SharedItemsImports = 4
+		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{1b3b5f6d-5c8b-4bd3-8ad0-325c5d077696}*SharedItemsImports = 4
+		SharedUtilsMvc\SharedUtilsMvc.projitems*{27446def-1313-46b3-ac68-cfb445d01efa}*SharedItemsImports = 4
+		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{2e4587a1-fa94-4fc9-8c52-2fd4144a397a}*SharedItemsImports = 4
+		SharedUtilsEmail\SharedUtilsEmail.projitems*{30185db8-cea4-4b22-a232-cd223e0ce5d5}*SharedItemsImports = 13
+		SharedUtilsAPI\SharedUtilsAPI.projitems*{310c06f7-7510-4e88-8e19-bba31164a46a}*SharedItemsImports = 13
+		SharedUtilsAPI\SharedUtilsAPI.projitems*{3e3e8bc2-b1c3-49e1-a330-10834625e63f}*SharedItemsImports = 4
+		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{3ecde1c7-cab4-4025-8790-12b07b4fa69f}*SharedItemsImports = 13
+		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{4e71dd2f-083f-4304-a80f-1aeb1e89e9f3}*SharedItemsImports = 13
+		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{68480271-eb5b-4ba7-8d35-3cc1ccbf83c8}*SharedItemsImports = 4
+		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{77db01da-e64b-4772-a545-6f38afc95890}*SharedItemsImports = 4
+		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{91a4242e-234d-4dc9-98ec-2ceeccc91c71}*SharedItemsImports = 13
+		SharedUtilsMvc\SharedUtilsMvc.projitems*{9530aa05-eb3d-44c8-8401-bad8edbfd211}*SharedItemsImports = 13
+		SharedUtilsAzureStorage\SharedUtilsAzureStorage.projitems*{9b6edf11-2488-4490-9b7f-b4094db1d56f}*SharedItemsImports = 4
+		SharedUtilsAPI\SharedUtilsAPI.projitems*{b7446f27-ed2a-422b-b5b6-9dd0ac22e3bf}*SharedItemsImports = 4
+		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{be02d962-c236-411c-ab6d-feed089da1f9}*SharedItemsImports = 4
+		SharedUtilsCryptography\SharedUtilsCryptography.projitems*{c1c680bd-7fae-41e6-8ce9-516ec9f2c54c}*SharedItemsImports = 4
+		SharedUtilsMvc\SharedUtilsMvc.projitems*{cf370db1-09b7-4ab3-ab4d-7bc9ed405dd2}*SharedItemsImports = 4
+		SharedUtilsMvc\SharedUtilsMvc.projitems*{d8ee0e2d-71ec-4a0d-888d-13cbde115b2f}*SharedItemsImports = 4
+		SharedUtilsNoReference\SharedUtilsNoReference.projitems*{dd9090ab-9af1-4c6e-8a91-385fb6f1191c}*SharedItemsImports = 4
+		SharedUtilsEmail\SharedUtilsEmail.projitems*{edc40a9a-a05a-40c2-aa06-8f73b9e6ddaa}*SharedItemsImports = 4
+		SharedUtilsAPI\SharedUtilsAPI.projitems*{f971c8eb-f01d-412b-bf31-4ddac5c27d5f}*SharedItemsImports = 4
+		SharedUtilsEmail\SharedUtilsEmail.projitems*{f9aebd9f-8c67-4555-b335-970ee79417eb}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
